@@ -4,6 +4,12 @@ This fork of FlashSocket.io adds support for Flash Player 11 with native JSON pa
 
 You will need a socket policy server to connect your application to your server. I got you covered here too, check my other repository here, https://github.com/EddieOne/nodejs-flash-socket-policy
 
+In your socket.io server, setup the polling transport
+
+```js
+io.set('transports', ['websocket', 'flashsocket', 'htmlfile', 'xhr-polling', 'jsonp-polling', 'polling']);
+```
+
 Once you have your policy server up and your socket.io server going, check InOut.as file for useage
 
 ###InOut.as
