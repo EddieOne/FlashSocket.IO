@@ -6,7 +6,10 @@
  */
 public class Decoder
 {
-	
+	var debug;
+	public function Decoder(debug){
+		this.debug = debug;
+	}
 	
 	public function decode(obj:String):Object
 	{
@@ -92,8 +95,9 @@ public class Decoder
 				//throw(new Error("Invalid json"));
 			}
 		}
-		
-		trace('decoded ' + str + ' as ' + p);
+		if(debug){
+			trace('decoded ' + str + ' as ' + p);
+		}
 		return p;
 	}
 }

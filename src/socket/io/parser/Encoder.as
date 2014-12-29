@@ -7,10 +7,11 @@
  */
 public class Encoder
 {
+	var debug;
 	
-	public function Encoder()
+	public function Encoder(debug)
 	{
-	
+		this.debug = debug;
 	}
 	
 	/**
@@ -24,7 +25,9 @@ public class Encoder
 	 */
 	public function encode(obj:*, callback:Function):void
 	{
-		trace('encoding packet ', obj);
+		if(debug){
+			trace('encoding packet ', obj);
+		}
 		
 		if (obj.type == null)
 			throw(new Error("Incorrect object type"));
@@ -61,9 +64,13 @@ public class Encoder
 		if (obj.nsp && '/' != obj.nsp)
 		{
 			nsp = true;
-			trace( "nsp : " + nsp );
+			if(debug){
+				trace( "nsp : " + nsp );
+			}
 			str += obj.nsp;
-			trace( "obj.nsp : " + obj.nsp );
+			if(debug){
+				trace( "obj.nsp : " + obj.nsp );
+			}
 		}
 		
 		// immediately followed by the id
@@ -85,7 +92,9 @@ public class Encoder
 			str += JSON.stringify(obj.data);
 		}
 		
-		trace('encoded ' + obj + ' as ' + str);
+		if(debug){
+			trace('encoded ' + obj + ' as ' + str);
+		}
 		return str;
 	}
 

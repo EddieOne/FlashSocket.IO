@@ -321,7 +321,7 @@
 			
 			if (message.charAt(0) == "4")
 			{
-				var packet:Object = new Decoder().decode(message);
+				var packet:Object = new Decoder(debug).decode(message);
 				//https://github.com/automattic/socket.io-protocol
 				/*	Packet#CONNECT (0)
 				   Packet#DISCONNECT (1)
@@ -344,7 +344,7 @@
 							//if we're on a specific channel (namespace) then we need to tell the server to switch us over
 							try
 							{
-								webSocket.send(new Encoder().encodeAsString({type: 0, nsp: this.channel}));
+								webSocket.send(new Encoder(debug).encodeAsString({type: 0, nsp: this.channel}));
 							}
 							catch (err:Error)
 							{
@@ -432,7 +432,7 @@
 			
 			try
 			{
-				webSocket.send(new Encoder().encodeAsString(packet));
+				webSocket.send(new Encoder(debug).encodeAsString(packet));
 			}
 			catch (err:Error)
 			{
