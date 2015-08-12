@@ -1,6 +1,6 @@
 # FlashSocket.IO 1.0.6
 
-This fork of FlashSocket.io adds support for Flash Player 11 with native JSON parsing and updates the Web Socket Library.  This version is compatable with Socket.io 1.0.6 and is the most complete Flash port. You should probably use JS but if you're locked into Flash, here's a <a href="http://unbounded.nid.io/">demo</a>.
+This fork of FlashSocket.io adds support for Flash Player 11+ with native JSON parsing and updates the Web Socket Library.  This version is compatable with Socket.io 1.0.6 and is the most complete Flash port. You should probably use JS but if you're locked into Flash, here's a <a href="http://unbounded.nid.io/">demo</a>.
 
 You will need a socket policy server to connect your application to your server. I got you covered here too, check my other repository here, https://github.com/EddieOne/nodejs-flash-socket-policy
 
